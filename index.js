@@ -343,6 +343,14 @@ client.on(Events.InteractionCreate, async interaction => {
     const reason = interaction.fields.getTextInputValue('report_reason');
     const ticketChannel = await client.channels.fetch(process.env.TICKETS_CHANNEL_ID);
 
+    //______ PORT just added ____________________
+    const PORT = process.env.PORT || 3000;
+
+    app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
+    });
+
+
     // Fetch the original post embed to include in the report
     let embed = null;
     try {
