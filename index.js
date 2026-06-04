@@ -127,7 +127,6 @@ client.on(Events.InteractionCreate, async interaction => {
       .setTitle(`🏷️ ${title}`)
       .setDescription(desc)
       .addFields({ name: '💰 Price', value: price, inline: true })
-      .setFooter({ text: `Posted by ${interaction.user.tag} (${interaction.user.id})` })
       .setColor(0x5865F2)
       .setTimestamp();
 
