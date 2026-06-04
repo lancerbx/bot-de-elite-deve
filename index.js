@@ -1,4 +1,19 @@
 require('dotenv').config();
+
+const express = require('express');
+const app = express();
+
+// Render pings this URL to check if your bot is alive
+app.get('/', (req, res) => {
+    res.send('Bot is online and healthy!');
+});
+
+// CRITICAL: Tells your app to use Render's dynamic system port number
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Web server successfully bound to port ${PORT}`);
+});
+
 const {
   Client, GatewayIntentBits, REST, Routes, SlashCommandBuilder,
   ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder,
